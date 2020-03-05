@@ -12,7 +12,7 @@
     http://www.springframework.org/schema/context/spring-context-4.1.xsd">
     
     <mvc:annotation-driven />
- 	<context:component-scan base-package="com.multiplex.controller"/>  
+ 	<context:component-scan base-package="com.mit.controller"/>  
  	
  	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -27,27 +27,27 @@
  	
   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />  
-<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />  
-<property name="username" value="system" />  
-<property name="password" value="orcl" />  
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:orclMIT" />  
+<property name="username" value="c##prady" />  
+<property name="password" value="oracle" />  
 </bean>  
   
 <bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">  
 <property name="dataSource" ref="ds"></property>  
 </bean>  
   
-<bean id="userDao" class="com.multiplex.dao.UserDAO">  
+<bean id="userDao" class="com.mit.dao.UserDAO">  
 <property name="jdbcTemplate" ref="template"></property>  
 </bean>    
  
 <!-- 
- <bean id="bookingdao" class="com.multiplex.dao.MovieBookingDao">
+ <bean id="bookingdao" class="com.mit.dao.MovieBookingDao">
     <property name="jdbcTemplate" ref="template"/>
     </bean>   -->
 
 
  
- <bean id="dao" class="com.multiplex.dao.MovieDAO">
+ <bean id="dao" class="com.mit.dao.MovieDAO">
     <property name="jdbcTemplate" ref="template"/>
     </bean>  
     
@@ -60,8 +60,8 @@
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
-		<property name="username" value="ptaruntej31@gmail.com" />
-		<property name="password" value="narasamma" />
+		<property name="username" value="dfdfdfdf@gmail.com" />
+		<property name="password" value="abcd" />
 
 		<property name="javaMailProperties">
 			<props>
@@ -75,12 +75,6 @@
 		<property name="mailSender" ref="mailSender" />
 	</bean> -->
 
-     
-   
-   
-   
-   
-   
  </beans>
  
  
